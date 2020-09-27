@@ -4,27 +4,34 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    private const float GRAVITY = -9.81f;
-    // Start is called before the first frame update
+    private float v = 0.0f;
+    private Vector3 v3Pos;
+    private const float g = 9.80665f;
+
     void Start()
     {
-        transform.position = new Vector3(0, 10, 0);
+        v3Pos = transform.position;
     }
 
-    // Update is called once per frame
+    // deltaY = Vprev*t - 1/2*g*(t*t)
+    // deltaV = -g*t
+
     void Update()
     {
+        float t = Time.deltaTime;
+        float delta = v * t  - g * t * t * 0.5f;
 
+   
+        v = v + g * t;
+        Debug.Log(v);
+        v3Pos.y -= delta;
 
-        //update the position
-        transform.position = transform.position + new Vector3(0, GRAVITY * Time.deltaTime, 0);
+        transform.position = v3Pos;
 
-        ////output to log the position change
-        //Debug.Log(transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Hit:" + other.name);
+        v *= -1;
     }
 }
