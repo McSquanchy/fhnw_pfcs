@@ -134,10 +134,10 @@ GameObject:
   - component: {fileID: 177019911}
   - component: {fileID: 177019910}
   - component: {fileID: 177019909}
-  - component: {fileID: 177019907}
   - component: {fileID: 177019908}
+  - component: {fileID: 177019907}
   m_Layer: 0
-  m_Name: Plane_Controllable
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,10 +306,10 @@ GameObject:
   - component: {fileID: 433460389}
   - component: {fileID: 433460388}
   - component: {fileID: 433460387}
-  - component: {fileID: 433460391}
   - component: {fileID: 433460392}
+  - component: {fileID: 433460391}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
